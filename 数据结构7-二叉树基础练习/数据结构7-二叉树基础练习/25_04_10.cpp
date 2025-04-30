@@ -1,91 +1,91 @@
-//#include<iostream>
-//using namespace std;
-//
-//struct TreeNode
-//{
-//	char val;
-//	TreeNode* left;
-//	TreeNode* right;
-//
-//	TreeNode(const char& x)
-//		:val(x)
-//		,left(nullptr)
-//		,right(nullptr)
-//	{ }
-//
-//};
-//
-//TreeNode* BuildTree(const string& str, int& i) 
-//{
-//	if (i >= str.size() || str[i] == '#') 
-//	{
-//		i++;
-//		return nullptr;
-//	}
-//
-//	TreeNode* newnode = new TreeNode(str[i++]);
-//	newnode->left = BuildTree(str, i);
-//	newnode->right = BuildTree(str, i);
-//
-//	return newnode;
-//}
-//
-//void ProOrder(TreeNode* root)
-//{
-//	if (root == nullptr)
-//		return;
-//
-//	cout << root->val;
-//	ProOrder(root->left);
-//	ProOrder(root->right);
-//
-//}
-//
-//void InOrder(TreeNode* root)
-//{
-//
-//	if (root == nullptr)
-//		return;
-//
-//	InOrder(root->left);
-//	cout << root->val;
-//	InOrder(root->right);
-//}
-//
-//void PosOrder(TreeNode* root)
-//{
-//	if (root == nullptr)
-//		return;
-//
-//	PosOrder(root->left);
-//	PosOrder(root->right);
-//	cout << root->val;
-//}
-//
-//int main()
-//{
-//
-//	int t;
-//	cin >> t;
-//	string str;
-//	int i = 0;
-//
-//	while (t--)
-//	{
-//		cin >> str;
-//		TreeNode* root = BuildTree(str,i);
-//		i = 0;
-//		ProOrder(root);
-//		cout << endl;
-//		InOrder(root);
-//		cout << endl;
-//		PosOrder(root);
-//		cout << endl;
-//		
-//	}
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+
+struct TreeNode
+{
+	char val;
+	TreeNode* left;
+	TreeNode* right;
+
+	TreeNode(const char& x)
+		:val(x)
+		,left(nullptr)
+		,right(nullptr)
+	{ }
+
+};
+
+TreeNode* BuildTree(const string& str, int& i) 
+{
+	if (i >= str.size() || str[i] == '#') 
+	{
+		i++;
+		return nullptr;
+	}
+
+	TreeNode* newnode = new TreeNode(str[i++]);
+	newnode->left = BuildTree(str, i);
+	newnode->right = BuildTree(str, i);
+
+	return newnode;
+}
+
+void ProOrder(TreeNode* root)
+{
+	if (root == nullptr)
+		return;
+
+	cout << root->val;
+	ProOrder(root->left);
+	ProOrder(root->right);
+
+}
+
+void InOrder(TreeNode* root)
+{
+
+	if (root == nullptr)
+		return;
+
+	InOrder(root->left);
+	cout << root->val;
+	InOrder(root->right);
+}
+
+void PosOrder(TreeNode* root)
+{
+	if (root == nullptr)
+		return;
+
+	PosOrder(root->left);
+	PosOrder(root->right);
+	cout << root->val;
+}
+
+int main()
+{
+
+	int t;
+	cin >> t;
+	string str;
+	int i = 0;
+
+	while (t--)
+	{
+		cin >> str;
+		TreeNode* root = BuildTree(str,i);
+		i = 0;
+		ProOrder(root);
+		cout << endl;
+		InOrder(root);
+		cout << endl;
+		PosOrder(root);
+		cout << endl;
+		
+	}
+
+	return 0;
+}
 
 
 //#include<iostream>
@@ -330,69 +330,70 @@
 //}
 
 
-#include<iostream>
-using namespace std;
-#include<vector>
+//#include<iostream>
+//using namespace std;
+//#include<vector>
+//
+//struct TreeNode
+//{
+//	int val;
+//	TreeNode* left;
+//	TreeNode* right;
+//
+//
+//	TreeNode(const int& x)
+//		: val(x)
+//		, left(nullptr)
+//		, right(nullptr)
+//	{}
+//
+//};
+//
+//TreeNode* BuildTree(const vector<int>& v1, int i)
+//{
+//	if (i >= v1.size() || v1[i] == 0)
+//		return nullptr;
+//
+//	TreeNode* newnode = new TreeNode(v1[i]);
+//	newnode->left = BuildTree(v1,i*2 + 1);
+//	newnode->right = BuildTree(v1,i*2 +2);
+//
+//	return newnode;
+//}
+//
+//void ProOrder(TreeNode* root)
+//{
+//	if (root == nullptr)
+//		return;
+//
+//	cout << root->val << " ";
+//	ProOrder(root->left);
+//	ProOrder(root->right);
+//	
+//
+//}
+//
+//int main()
+//{
+//	int t;
+//	cin >> t;
+//	int n,i,j;
+//
+//	while (t--)
+//	{
+//		cin >> n;
+//		vector<int> v1(n);
+//		for (int j = 0; j < n; j++)
+//			cin >> v1[j];
+//		
+//		i = 0;
+//		TreeNode* root = BuildTree(v1, i);
+//		ProOrder(root);
+//		cout << endl;
+//
+//	}
+//
+//
+//	return 0;
+//}
 
-struct TreeNode
-{
-	int val;
-	TreeNode* left;
-	TreeNode* right;
-
-
-	TreeNode(const int& x)
-		: val(x)
-		, left(nullptr)
-		, right(nullptr)
-	{}
-
-};
-
-TreeNode* BuildTree(const vector<int>& v1, int i)
-{
-	if (i >= v1.size() || v1[i] == 0)
-		return nullptr;
-
-	TreeNode* newnode = new TreeNode(v1[i]);
-	newnode->left = BuildTree(v1,i*2 + 1);
-	newnode->right = BuildTree(v1,i*2 +2);
-
-	return newnode;
-}
-
-void ProOrder(TreeNode* root)
-{
-	if (root == nullptr)
-		return;
-
-	cout << root->val << " ";
-	ProOrder(root->left);
-	ProOrder(root->right);
-	
-
-}
-
-int main()
-{
-	int t;
-	cin >> t;
-	int n,i,j;
-
-	while (t--)
-	{
-		cin >> n;
-		vector<int> v1(n);
-		for (int j = 0; j < n; j++)
-			cin >> v1[j];
-		
-		i = 0;
-		TreeNode* root = BuildTree(v1, i);
-		ProOrder(root);
-		cout << endl;
-
-	}
-
-
-	return 0;
-}
